@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languages>
+    <generic>
+        <string name="scene_01_title"></string>
+        <string name="scene_01_0"></string>
+        <string name="scene_01_1"></string>
+        <string name="scene_01_2"></string>
+
+        <string name="scene_02_title"></string>
+        <string name="scene_02_0"></string>
+        <string name="scene_02_1"></string>
+        <string name="scene_02_2"></string>
+
+        <string name="scene_03_title"></string>
+        <string name="scene_03_0"></string>
+        <string name="scene_03_1"></string>
+        <string name="scene_03_2"></string>
+        <string name="scene_03_3"></string>
+    </generic>
+
+    <Portuguese>
+        <string name="scene_01_title">Porta do Salão de Jogos–Ambiente Doméstico’</string>
+        <string name="scene_01_0">Quase meia-noite e eu estou aqui... (bocejo) só para liderar o ranking.
+         Mas a graça não seria fazer isso com os amigos? Que seja</string>
+        <string name="scene_01_1">Trancada, óbvio.</string>
+        <string name="scene_01_2">Simples, não?</string>
+        <string name="scene_01_3">Um quadro comum</string>
+
+        <string name="scene_02_title">Salão de Jogos</string>
+        <string name="scene_02_0">Agora, só encontrar qual máquina era.</string>
+        <string name="scene_02_1">Não era essa.</string>
+        <string name="scene_02_2">É esse.</string>
+
+        <string name="scene_03_title">Máquina Polybius</string>
+        <string name="scene_03_0">Tenho certeza de que é esta.</string>
+        <string name="scene_03_1">Hum... Parece que está sem energia.”</string>
+        <string name="scene_03_2">Lógico, estranho seria se ligasse sem a tomada.</string>
+        <string name="scene_03_3">Polybius, hum? Que nome estranho para um jogo</string>
+    </Portuguese>
+    
+    <English>
+        <string name="scene_01_title"></string>
+        <string name="scene_01_0"></string>
+        <string name="scene_01_1"></string>
+        <string name="scene_01_2"></string>
+    </English>
+</languages>
