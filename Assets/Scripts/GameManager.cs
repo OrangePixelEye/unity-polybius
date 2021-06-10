@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     }
 
     private Lang game_language;
+    private Database database;
     private string current_language = "Portuguese";
 
     public void ChangeScene(int scene_build_index)
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         game_language = new Lang(Path.Combine(Application.dataPath, "Scripts/Languages/lang.xml"), current_language);
+        database = new Database();
     }
 
     public string getText(string name) => game_language.getString(name); 

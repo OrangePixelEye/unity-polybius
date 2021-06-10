@@ -2,45 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
+using System.Linq;
 
-public class NumberInputManager : MonoBehaviour, IMove
+public class NumberInputManager : MonoBehaviour
 {
-    public Text[] texts;
-    private int selected_text = 0;
-    private int total_texts;
-    void Start()
-    {
-        total_texts = texts.Length;
+    private static NumberInputManager instance;
+
+    [SerializeField]
+    private Codes[] codes;
+
+    [System.Serializable]
+    struct Codes{
+        public int[] code;
     }
 
-    void Update()
-    {
-        handleMovement();
-    }
-
-    public void handleMovement()
-    {
-        float vertical = Input.GetAxis("Vertical");
-        float horizontal = Input.GetAxis("Horizontal");
-        if(Math.Abs(vertical) > .8f || Math.Abs(horizontal) > .8f) move(horizontal, vertical);
-    }
-
-    public void move(float x = 0, float y = 0)
-    {
-        if(y > 0){
-            changeNumber(true);
+    public static NumberInputManager Instance
+	{
+        get
+        {
+            if(instance == null)
+            {
+                instance = FindObjectOfType<NumberInputManager>();
+            }
+            return instance;
         }
-        else changeNumber(false);
     }
 
-    private void changeNumber(bool next)
+    public void useCode(int[] code)
     {
-        int actual_number = int.Parse(texts[selected_text].text); 
-        actual_number = (next ? (actual_number >= 45 ? 0: actual_number++) : (actual_number <= 0 ? 45: actual_number--));
-        updateNumber(actual_number);
+        for(int i = 0; i < codes.Length; i++)
+        {
+            if(Enumerable.SequenceEqual(codes[i].code, code))
+            {
+                //do stuff
+            }
+        }
     }
-
-    private void updateNumber(int actual_number) => texts[selected_text].text = actual_number.ToString();
-    
 }

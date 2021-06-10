@@ -31,7 +31,7 @@ public class PolybiusManager : MonoBehaviour
     {
         /*Fazer a conta levando em relação do tamanho do monitor(Map)*/
         //mouse.move(120);
-        lifesActive = lifes.Length-1;
+        lifesActive = lifes.Length - 1;
     }
 
     // Update is called once per frame

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <languages>
     <generic>
+        <string name="scene_00_title"></string>
+        <string name="scene_00_0"></string>
+        <string name="scene_00_1"></string>
+        <string name="scene_00_2"></string>
+        <string name="scene_00_3"></string>
+
         <string name="scene_01_title"></string>
         <string name="scene_01_0"></string>
         <string name="scene_01_1"></string>
@@ -19,6 +25,22 @@
     </generic>
 
     <Portuguese>
+        <string name="scene_00_title">Introdução</string>
+        <string name="scene_00_0">Me chamo Luke, Luke Collins, um jovem – como tantos outros – 
+        apaixonado por fliperamas e que, entre uma ficha e outra, se valia destes momentos para se 
+        divertir com os amigos – sobretudo aos fins de semana –.</string>
+        <string name="scene_00_1">Alimentando a minha paixão, meu pai fazia-se tão alucinado quanto,
+         a ponto de abrir um pequeno estabelecimento em nosso bairro voltado a estas máquinas que, 
+         então, completa 1 ano. </string>
+        <string name="scene_00_2">Para comemorar a data, meu pai adquiriu um pequeno acervo de jogos que,
+         embora grande parte datados, era o que a receita possibilitava. Porém, um título se fazia, por sorte,
+          bastante recente</string>
+        <string name="scene_00_3">Logo, contei a meus amigos esta novidade; ficamos muito ansiosos para que sábado 
+        chegasse para disputarmos o ranking. Porém, naquela noite de quinta-feira, minha ansiedade foi tanta que, 
+        tendo o privilégio de acessar diversos fliperamas apenas indo ao primeiro andar de nosso sobrado, desci para 
+        o salão de jogos...”
+        </string>
+
         <string name="scene_01_title">Porta do Salão de Jogos–Ambiente Doméstico’</string>
         <string name="scene_01_0">Quase meia-noite e eu estou aqui... (bocejo) só para liderar o ranking.
          Mas a graça não seria fazer isso com os amigos? Que seja</string>
