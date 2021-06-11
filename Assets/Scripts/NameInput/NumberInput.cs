@@ -56,14 +56,25 @@ public class NumberInput : MonoBehaviour, IMove
 
     private void changeNumberSelected(bool next)
     {
+        texts[selected_text].color = Color.gray;
         if(next)
         {
             selected_text++;
             if(selected_text > texts.Length - 1) selected_text = 0;
-            return;
         }
-        selected_text--;
-        if(selected_text < 0) selected_text = texts.Length - 1;
+        else
+        {
+            selected_text--;
+            if(selected_text < 0) selected_text = texts.Length - 1;
+        }
+        
+        StartCoroutine("wait");
+        texts[selected_text].color = Color.white;
+    }
+
+    private IEnumerator wait()
+    {
+        yield return new WaitForSeconds(0.1f);
     }
 
     private void changeNumber(bool next)
@@ -73,7 +84,6 @@ public class NumberInput : MonoBehaviour, IMove
         {
             actual_number++;
             if(actual_number > 45) actual_number = 0; 
-            return;
         }
         else
         {
@@ -87,9 +97,8 @@ public class NumberInput : MonoBehaviour, IMove
 
     private IEnumerator updateNumber(int actual_number)
     {
-        yield return new WaitForSeconds(0.2f);
-        texts[selected_text].text = actual_number.ToString();
-        
+        yield return new WaitForSeconds(0.15f);
+        texts[selected_text].text = actual_number.ToString();  
     }
     
 }

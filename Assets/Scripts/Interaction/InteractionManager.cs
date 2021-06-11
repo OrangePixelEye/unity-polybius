@@ -23,17 +23,28 @@ public class InteractionManager : MonoBehaviour
     
     [SerializeField]
     private GameObject text_panel;
-    private Text itens_text;    
+    private Text itens_text;
+
+    [SerializeField]
+    private GameObject image_panel;
+    private Image itens_image;
 
     private void Start()
     {
         itens_text = text_panel.GetComponentInChildren(typeof(Text)) as Text;
+        itens_image = image_panel.GetComponentInChildren(typeof(Image)) as Image;
     }
 
     public void showText(string name)
     {
         text_panel.SetActive(true);
         itens_text.text = GameManager.Instance.getText(name);
+    }
+
+    public void showImage(Sprite item)
+    {
+        image_panel.SetActive(true);
+        itens_image.sprite = item;
     }
 
     public void textClosed()

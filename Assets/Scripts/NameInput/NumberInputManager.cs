@@ -11,6 +11,9 @@ public class NumberInputManager : MonoBehaviour
     [SerializeField]
     private Codes[] codes;
 
+    [SerializeField]
+    private Spawn spawn;
+
     [System.Serializable]
     struct Codes{
         public int[] code;
@@ -34,7 +37,8 @@ public class NumberInputManager : MonoBehaviour
         {
             if(Enumerable.SequenceEqual(codes[i].code, code))
             {
-                //do stuff
+                spawn.Difficult = i + 1;
+                return;
             }
         }
     }

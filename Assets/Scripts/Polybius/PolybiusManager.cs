@@ -26,6 +26,9 @@ public class PolybiusManager : MonoBehaviour
     [SerializeField]
     private Image[] lifes;
     int lifesActive;
+
+    [SerializeField]
+    private Spawn spawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,10 +52,9 @@ public class PolybiusManager : MonoBehaviour
             lifesActive = 0;
             lose();
         }
-
     }
     private void lose()
     {
-        
+        GameManager.Instance.Sanity -= spawn.Difficult;
     }
 }

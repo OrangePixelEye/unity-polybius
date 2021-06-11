@@ -14,6 +14,10 @@ public class Spawn : MonoBehaviour, IMove
     Props_Text p = null;
     bool has_text = false;
 
+    private int difficult = 3;
+
+    public int Difficult{get => difficult; set=> difficult = value;}
+
     void Start()
     {
         code_char = code.ToCharArray();
@@ -46,7 +50,7 @@ public class Spawn : MonoBehaviour, IMove
     {
         while(true)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.3f / difficult);
             spawn();
         }
     }

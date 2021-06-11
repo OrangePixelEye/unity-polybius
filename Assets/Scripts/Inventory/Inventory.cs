@@ -47,6 +47,11 @@ public class Inventory : MonoBehaviour
 
     public void findItem(int i)
     {
+        if(itens[i] is IViewable)
+        {
+            InteractionManager.Instance.showImage(itens[i].sprite);
+            return;
+        }
         using_item = itens[i];          
     }
 
