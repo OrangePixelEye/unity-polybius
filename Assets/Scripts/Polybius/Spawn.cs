@@ -50,7 +50,7 @@ public class Spawn : MonoBehaviour, IMove
     {
         while(true)
         {
-            yield return new WaitForSeconds(0.3f / difficult);
+            yield return new WaitForSeconds(0.3f * difficult);
             spawn();
         }
     }

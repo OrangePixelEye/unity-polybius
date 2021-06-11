@@ -18,17 +18,22 @@ public class PolybiusManager : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    private GameObject old_room;
+
     MouseController mouse = new MouseController();
 
     [SerializeField]
-    private Text level;
+    private TextMesh level;
 
     [SerializeField]
-    private Image[] lifes;
+    private SpriteRenderer[] lifes;
     int lifesActive;
 
     [SerializeField]
     private Spawn spawn;
+
+    public GameObject sanity;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,5 +61,7 @@ public class PolybiusManager : MonoBehaviour
     private void lose()
     {
         GameManager.Instance.Sanity -= spawn.Difficult;
+        if(sanity != null) sanity.SetActive(true); 
+        MapController.Instance.changeMap(old_room);
     }
 }

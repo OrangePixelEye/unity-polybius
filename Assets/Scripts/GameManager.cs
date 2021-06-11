@@ -58,6 +58,5 @@ public class GameManager : MonoBehaviour
         //to-do
     }
 
-    private void timer() => time += Time.deltaTime;
-     
+    private void timer() => time += Time.deltaTime; 
 }

@@ -27,12 +27,12 @@ public class InteractionManager : MonoBehaviour
 
     [SerializeField]
     private GameObject image_panel;
+    [SerializeField]
     private Image itens_image;
 
     private void Start()
     {
         itens_text = text_panel.GetComponentInChildren(typeof(Text)) as Text;
-        itens_image = image_panel.GetComponentInChildren(typeof(Image)) as Image;
     }
 
     public void showText(string name)

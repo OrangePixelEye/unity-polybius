@@ -6,16 +6,9 @@ using System;
 
 public class NumberInput : MonoBehaviour, IMove
 {
-    public Text[] texts;
+    public TextMesh[] texts;
     private int selected_text = 0;
     private int total_texts;
-
-    [System.Serializable]
-    public struct Codes{
-        public int[] code;
-    }
-
-    public Codes[] codes;
 
     void Start()
     {
@@ -42,8 +35,7 @@ public class NumberInput : MonoBehaviour, IMove
         {
             code[i] = int.Parse(texts[i].text);
         }
-        NumberInputManager.Instance.useCode(code);
-        
+        NumberInputManager.Instance.useCode(code);  
     }
 
     public void move(float x = 0, float y = 0)

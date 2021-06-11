@@ -12,7 +12,13 @@ public class NumberInputManager : MonoBehaviour
     private Codes[] codes;
 
     [SerializeField]
-    private Spawn spawn;
+    private GameObject input;
+
+    [SerializeField]
+    private GameObject game_ui;
+
+    [SerializeField]
+    private GameObject spawn;
 
     [System.Serializable]
     struct Codes{
@@ -37,7 +43,11 @@ public class NumberInputManager : MonoBehaviour
         {
             if(Enumerable.SequenceEqual(codes[i].code, code))
             {
-                spawn.Difficult = i + 1;
+                spawn.GetComponentInChildren<Spawn>().Difficult = i + 1;
+                input.SetActive(false);
+                //ativar o polybius
+                spawn.SetActive(true);
+                game_ui.SetActive(true);
                 return;
             }
         }

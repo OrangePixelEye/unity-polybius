@@ -16,6 +16,7 @@
         <string name="scene_02_0"></string>
         <string name="scene_02_1"></string>
         <string name="scene_02_2"></string>
+        <string name="scene_02_3"></string>
 
         <string name="scene_03_title"></string>
         <string name="scene_03_0"></string>
@@ -52,6 +53,7 @@
         <string name="scene_02_0">Agora, só encontrar qual máquina era.</string>
         <string name="scene_02_1">Não era essa.</string>
         <string name="scene_02_2">É esse.</string>
+        <string name="scene_02_3">O que será isso?</string>
 
         <string name="scene_03_title">Máquina Polybius</string>
         <string name="scene_03_0">Tenho certeza de que é esta.</string>

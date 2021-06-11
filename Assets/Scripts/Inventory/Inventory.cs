@@ -25,6 +25,8 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public Item Using_item { get => using_item; }
+
     void Awake()
     {
         view = GetComponent<InventoryView>();

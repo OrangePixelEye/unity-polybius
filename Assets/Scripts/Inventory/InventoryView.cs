@@ -8,6 +8,8 @@ public class InventoryView : MonoBehaviour
     [SerializeField]
     private Image[] images = new Image[5];
 
+    private int selected_item;
+
     public void updateInventory(int i, Item item)
     {
         if(item != null)
@@ -25,7 +27,16 @@ public class InventoryView : MonoBehaviour
 
     public void selectItem(int i)
     {
-        images[i].color = Color.red;
         Inventory.Instance.findItem(i);
+        if(Inventory.Instance.Using_item != null)
+        {
+            images[i].color = Color.red;
+            selected_item = i;
+        }
+    }
+
+    public void itemViewClosed()
+    {
+        images[selected_item].color = Color.white;
     }
 }
