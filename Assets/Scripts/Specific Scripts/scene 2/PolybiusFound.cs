@@ -6,7 +6,7 @@ public class PolybiusFound : Interactable
 {
     [SerializeField]
     private GameObject new_room;
-    protected override void doStuff()
+    protected override void OnMouseUp()
     {
         MapController.Instance.changeMap(new_room);
     }

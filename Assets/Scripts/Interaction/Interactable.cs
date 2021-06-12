@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() => my_collider = GetComponent<BoxCollider2D>();
-    protected void OnMouseUp() 
+    protected virtual void OnMouseUp() 
     {
         InteractionManager.Instance.showText(this.gameObject.name);
         if(item != null)
@@ -33,7 +33,7 @@ public class Interactable : MonoBehaviour
                 doStuff();return;
             }
         }
-        doStuff();        
+        //doStuff();        
     }
     
     void OnMouseEnter() => Cursor.SetCursor(cursorTextureNo, Vector2.zero, CursorMode.Auto);

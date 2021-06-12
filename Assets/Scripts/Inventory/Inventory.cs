@@ -51,6 +51,7 @@ public class Inventory : MonoBehaviour
     {
         if(itens[i] is IViewable)
         {
+            CameraController.Instance.MoveCamera = false;
             InteractionManager.Instance.showImage(itens[i].sprite);
             return;
         }

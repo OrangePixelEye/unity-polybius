@@ -14,9 +14,7 @@ public class InventoryView : MonoBehaviour
     {
         if(item != null)
         {
-            //update sprite
             images[i].sprite = item.Sprite;
-            //update go name
             images[i].gameObject.name = item.Name;
             return;
         }
@@ -38,5 +36,6 @@ public class InventoryView : MonoBehaviour
     public void itemViewClosed()
     {
         images[selected_item].color = Color.white;
+        CameraController.Instance.MoveCamera = true;
     }
 }

@@ -1342,12 +1342,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 750744630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65be5f2e8ba35974f8ef60a1e248b7f7, type: 3}
+  m_Script: {fileID: 11500000, guid: d313520aa7bfd0f42b88ef61df30e060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cursorTextureNo: {fileID: 0}
   item: {fileID: 7263668395648406265, guid: 19cc977620fd9ff469655e609e8a870b, type: 3}
   item_name: 
+  polybius: {fileID: 1049234461}
 --- !u!61 &750744634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1722,7 +1723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &950500283
 Transform:
   m_ObjectHideFlags: 0
@@ -1807,7 +1808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1005795760
 SpriteRenderer:
   m_ObjectHideFlags: 0

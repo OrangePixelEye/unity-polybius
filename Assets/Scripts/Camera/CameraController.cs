@@ -14,8 +14,9 @@ public class CameraController : MonoBehaviour
     private Vector3 mUpDirection; // The inital "up" of the came
     float mSpeed = 3.0f; // Scale. Speed of the movement
 
-
     private bool can_camera_move = true;
+
+    public bool MoveCamera { get => can_camera_move; set=> can_camera_move = value; }
 
     private static CameraController instance;
     public static CameraController Instance
