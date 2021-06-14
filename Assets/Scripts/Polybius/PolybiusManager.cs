@@ -21,6 +21,9 @@ public class PolybiusManager : MonoBehaviour
     [SerializeField]
     private GameObject old_room;
 
+	bool first_time = true;
+	public bool First { get => first_time; }
+
     MouseController mouse = new MouseController();
 
     [SerializeField]
@@ -60,6 +63,7 @@ public class PolybiusManager : MonoBehaviour
     }
     private void lose()
     {
+		first_time = false;
         GameManager.Instance.Sanity -= spawn.Difficult;
         if(sanity != null) sanity.SetActive(true); 
         MapController.Instance.changeMap(old_room);

@@ -41,9 +41,6 @@ public class Interactable : MonoBehaviour
     void OnMouseExit() => Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto); 
 
     protected virtual void doStuff(){}
-    protected void inventoryClosed(object sender, EventArgs e)
-	{
-
-	}
+    protected void inventoryClosed(object sender, EventArgs e){}
     
 }

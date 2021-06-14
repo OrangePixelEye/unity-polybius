@@ -32,7 +32,7 @@ public class Player : MonoBehaviour, IInput
     {
         shooting = true;
         GameObject tmp = (GameObject)Instantiate(bullet, this.gameObject.transform.position, Quaternion.identity, gameObject.transform);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSecondsRealtime(0.3f);
         shooting = false;
     }
 

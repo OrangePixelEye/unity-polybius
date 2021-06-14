@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     private int sanity = 10;
     private float time = 0;
 
+	private bool end = false;
+
     public float Timer { get => time; }
     public int Sanity 
     { 
@@ -34,9 +36,24 @@ public class GameManager : MonoBehaviour
         } 
     }
 
+	public bool Lose 
+	{ 
+		get => positive_ending; 
+	}
+
+	private bool positive_ending = false;
     private Lang game_language;
     private Database database;
     private string current_language = "Portuguese";
+
+	public string Language 
+	{ 
+		get => current_language; 
+		set 
+		{
+			current_language = value;
+		}
+	}
 
     public void ChangeScene(int scene_build_index) => SceneManager.LoadScene(scene_build_index);
     
@@ -48,15 +65,28 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        //timer();
+        //if(!ending)timer();
     }
+
+	public string getDatabaseData()
+	{
+		StartCoroutine(database.getText());
+		return database.showDatabase();
+	}
 
     public string getText(string name) => game_language.getString(name); 
 
     private void lose()
-    {
-        //to-do
-    }
+	{
+		positive_ending = false;	
+		end = true;
+	}
+    
+	private void win()
+	{
+		positive_ending = true;
+		end = true;
+	} 
 
-    private void timer() => time += Time.deltaTime; 
+    private void timer() => time += Time.deltaTime;
 }

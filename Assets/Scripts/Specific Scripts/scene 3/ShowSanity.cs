@@ -23,7 +23,7 @@ public class ShowSanity : MonoBehaviour
 
         while(up)
         {
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForSecondsRealtime(Time.deltaTime);
             y -= 0.2f;
             rect.anchoredPosition = new Vector3(x, y, z);
             if(y <= -40f)

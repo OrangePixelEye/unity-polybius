@@ -20,22 +20,22 @@ public class NumberInputManager : MonoBehaviour
     [SerializeField]
     private GameObject spawn;
 
-    [System.Serializable]
-    struct Codes{
-        public int[] code;
-    }
+	[System.Serializable]
+	struct Codes{
+		public int[] code;
+	}
 
-    public static NumberInputManager Instance
+	public static NumberInputManager Instance
 	{
-        get
-        {
-            if(instance == null)
-            {
-                instance = FindObjectOfType<NumberInputManager>();
-            }
-            return instance;
-        }
-    }
+		get
+		{
+ 			if(instance == null)
+			{
+				instance = FindObjectOfType<NumberInputManager>();
+			}
+			return instance;
+		}
+	}
 
     public void useCode(int[] code)
     {

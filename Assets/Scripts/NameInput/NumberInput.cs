@@ -7,8 +7,8 @@ using System;
 public class NumberInput : MonoBehaviour, IMove
 {
     public TextMesh[] texts;
-    private int selected_text = 0;
-    private int total_texts;
+    protected int selected_text = 0;
+    protected int total_texts;
 
     void Start()
     {
@@ -25,10 +25,10 @@ public class NumberInput : MonoBehaviour, IMove
         if(Input.GetAxis("Fire1") >= 0.3f) enterGame();
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
-        if(Math.Abs(vertical) >= 0.3f|| Math.Abs(horizontal) >= 0.3f) move(horizontal, vertical);
+        if(Math.Abs(vertical) >= 0.45f|| Math.Abs(horizontal) >= 0.45f) move(horizontal, vertical);
     }
 
-    private void enterGame()
+    protected virtual void enterGame()
     {
         int[] code = new int[texts.Length];
         for(int i = 0; i < texts.Length; i++)
@@ -42,11 +42,11 @@ public class NumberInput : MonoBehaviour, IMove
     {
         if(x > 0) changeNumberSelected(true);
         if(x < 0) changeNumberSelected(false);
-        if(y > 0) changeNumber(true);
-        if (y < 0) changeNumber(false);
+        if(y > 0) changeText(true);
+        if (y < 0) changeText(false);
     }
 
-    private void changeNumberSelected(bool next)
+    protected virtual void changeNumberSelected(bool next)
     {
         texts[selected_text].color = Color.gray;
         if(next)
@@ -66,10 +66,10 @@ public class NumberInput : MonoBehaviour, IMove
 
     private IEnumerator wait()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
     }
 
-    private void changeNumber(bool next)
+    protected virtual void changeText(bool next)
     {
         int actual_number = int.Parse(texts[selected_text].text); 
         if(next)
@@ -84,13 +84,13 @@ public class NumberInput : MonoBehaviour, IMove
         }
         
         //actual_number = (next ? (actual_number >= 45 ? 0: actual_number++) : (actual_number <= 0 ? 45: actual_number--));
-        StartCoroutine(updateNumber(actual_number));
+        StartCoroutine(updateText(actual_number.ToString()));
     }
 
-    private IEnumerator updateNumber(int actual_number)
+    protected virtual IEnumerator updateText(string new_text)
     {
-        yield return new WaitForSeconds(0.15f);
-        texts[selected_text].text = actual_number.ToString();  
+        yield return new WaitForSecondsRealtime(0.15f);
+        texts[selected_text].text = new_text;  
     }
     
 }

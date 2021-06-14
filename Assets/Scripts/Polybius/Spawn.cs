@@ -48,9 +48,10 @@ public class Spawn : MonoBehaviour, IMove
 
     private IEnumerator spawnObjects()
     {
+		if(PolybiusManager.Instance.First) difficult *= 12;
         while(true)
         {
-            yield return new WaitForSeconds(0.3f * difficult);
+            yield return new WaitForSecondsRealtime(0.3f * difficult/2);
             spawn();
         }
     }

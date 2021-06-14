@@ -61,11 +61,41 @@
         <string name="scene_03_2">Lógico, estranho seria se ligasse sem a tomada.</string>
         <string name="scene_03_3">Polybius, hum? Que nome estranho para um jogo</string>
     </Portuguese>
-    
-    <English>
-        <string name="scene_01_title"></string>
-        <string name="scene_01_0"></string>
-        <string name="scene_01_1"></string>
-        <string name="scene_01_2"></string>
+
+	<English>
+        <string name="scene_00_title">Introduction</string>
+        <string name="scene_00_0">”My name is Luke, Luke Collins, a young man, like so many others – 
+        in love with arcades and, between one ticket and another, I spent time to
+        have fun with my friends – especially on weekends –.</string>
+        <string name="scene_00_1">Feeding my passion, my father was as crazy as I am,
+         to the point of opening a small establishment in our neighborhood dedicated to these machines, 
+         which completes 1 year. </string>
+        <string name="scene_00_2">To celebrate, my father bought a small collection of games that,
+         although most of them expired, that was what revenue made possible. However, a title was, luckily,
+         quite recent.</string>
+        <string name="scene_00_3">So, I told my friends the news, we are very anxious to that Saturday. 
+        to come to dispute the ranking. But, that Thursday night, I was so anxious that, 
+        having the privilege of acessing several arcades just by going to the first floor of our townhouse, 
+        I went down to the game room...”
+        </string>
+
+        <string name="scene_01_title">Game Room Door – Domestic Environment</string>
+        <string name="scene_01_0">Almost mid night and I’m here... (yawn) just to lead the ranking. 
+         But would that be fair to my friends? Whatever! </string>
+        <string name="scene_01_1">Locked, obviously.</string>
+        <string name="scene_01_2">Simple, isn’t it?</string>
+        <string name="scene_01_3">A commom painting.</string>
+
+        <string name="scene_02_title">Game Room</string>
+        <string name="scene_02_0">Now, I just have to find which machine it was.</string>
+        <string name="scene_02_1">Wasn’t that.</string>
+        <string name="scene_02_2">This one.</string>
+        <string name="scene_02_3">What suppose to be that?</string>
+
+        <string name="scene_03_title">Polybius Machine</string>
+        <string name="scene_03_0">I’m pretty sure that is this one.</string>
+        <string name="scene_03_1">Hum... It looks like it’s out of power.</string>
+        <string name="scene_03_2">Of course, it would be strange if it turned on without plug in power socket.</string>
+        <string name="scene_03_3">Polybius, hum? Weird name for a game. </string>
     </English>
 </languages>
