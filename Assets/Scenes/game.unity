@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   codes:
   - code: 0c00000007000000050000001f000000
-  - code: 0c00000007000000
+  - code: 0c000000070000000700000007000000
   input: {fileID: 646012006}
   game_ui: {fileID: 822657676}
   spawn: {fileID: 240923109}
@@ -315,7 +315,9 @@ MonoBehaviour:
   - {fileID: 6972190724633001831, guid: e4b94eae87116df4aa9c7d26535c87fe, type: 3}
   - {fileID: 3290520810325152001, guid: 524efbf013d83a440b1711b6dd5d8eab, type: 3}
   - {fileID: 1158324723226365498, guid: f4fc8a0284d5ce94c816d770b5d3786f, type: 3}
-  code: baka
+  code:
+  - dasd
+  - masd
 --- !u!212 &79415470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1813,7 +1815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1005795760
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3201,7 +3203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1299111668
 Transform:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class Spawn : MonoBehaviour, IMove
     private GameObject[] objectsToSpawn;
 
     [SerializeField]
-    private string code;
+    private string[] code;
     private char[] code_char;
     private int current_letter = 0;
     Props_Text p = null;
@@ -20,7 +20,7 @@ public class Spawn : MonoBehaviour, IMove
 
     void Start()
     {
-        code_char = code.ToCharArray();
+        code_char = code[difficult - 1].ToCharArray();
         //Props_Text.Instance.LetterNotDestroyed += letterNotDestroyed;
         //Props_Text.Instance.LetterDestroyed += letterDestroyed;
         StartCoroutine(spawnObjects());

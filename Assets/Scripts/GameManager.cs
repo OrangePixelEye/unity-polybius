@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
 		set 
 		{
 			current_language = value;
+			game_language = new Lang(Path.Combine(Application.dataPath, "Scripts/Languages/lang.xml"), current_language);
 		}
 	}
 
@@ -67,6 +68,8 @@ public class GameManager : MonoBehaviour
     {
         //if(!ending)timer();
     }
+
+	public void sendToDatabase(string name, string time, string ending) => StartCoroutine(database.sendData(name, time, ending));
 
 	public string getDatabaseData()
 	{

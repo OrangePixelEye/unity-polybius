@@ -20,9 +20,9 @@ public class NameInputManager : MonoBehaviour, IMove
 		}
 	}
 
-    public void getName()
+    public string getName()
     {
-		print(letters.Characters);
+		return letters.Characters;
     }
 
     public void handleMovement()
@@ -35,9 +35,10 @@ public class NameInputManager : MonoBehaviour, IMove
         throw new System.NotImplementedException();
     }
 
-	public void sendToDatabase(char[] name)
+	public void sendToDatabase()
 	{
 		FinalSceneManager temp = new FinalSceneManager();
 		string time = temp.convertTimeToNormal(GameManager.Instance.Timer);
+		GameManager.Instance.sendToDatabase(getName(), time, GameManager.Instance.Lose.ToString());
 	}
 }
