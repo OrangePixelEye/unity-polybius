@@ -23,8 +23,11 @@ public class GameManager : MonoBehaviour
     private float time = 0;
 
 	private bool end = false;
+	bool timer_can_run = false;
 
     public float Timer { get => time; }
+
+	public bool TimerCanRun{ set => timer_can_run = value;}
     public int Sanity 
     { 
         get => sanity; 
@@ -71,7 +74,7 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        //if(!ending)timer();
+        if(!end && timer_can_run)timer();
     }
 
 	public void sendToDatabase(string name, string time, int ending) => StartCoroutine(database.sendData(name, time, ending));
@@ -87,7 +90,7 @@ public class GameManager : MonoBehaviour
 		ChangeScene(4);
 	}
     
-	private void win()
+	public void win()
 	{
 		positive_ending = true;
 		end = true;

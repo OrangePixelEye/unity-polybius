@@ -29,7 +29,11 @@ public class TextStartManager : MonoBehaviour
 		if(Input.anyKey && can_exit) exitScene();
 	}
 
-	void exitScene() => GameManager.Instance.ChangeScene(3);
+	void exitScene()
+	{
+		GameManager.Instance.TimerCanRun = true;
+		GameManager.Instance.ChangeScene(3);
+	} 
 
 	private string getText()
 	{

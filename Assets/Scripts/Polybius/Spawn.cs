@@ -85,6 +85,7 @@ public class Spawn : MonoBehaviour, IMove
 	{
         current_letter++;
         has_text = false;
+		if(current_letter >= code_char.Length - 1 && difficult == code.Length) GameManager.Instance.win();
         if(current_letter >= code_char.Length - 1)
         {
             VictoryEvent();
