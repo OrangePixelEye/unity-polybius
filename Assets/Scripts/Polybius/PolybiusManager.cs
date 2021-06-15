@@ -55,10 +55,10 @@ public class PolybiusManager : MonoBehaviour
     {
         lifes[lifesActive].enabled = false;
         lifesActive--;
-        if(lifesActive < 0)
+        if(lifesActive <= 0)
         {
-            lifesActive = 0;
             lose();
+			lifesActive = 0;
         }
     }
     private void lose()
