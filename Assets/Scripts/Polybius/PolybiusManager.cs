@@ -22,9 +22,11 @@ public class PolybiusManager : MonoBehaviour
     private GameObject old_room;
 
 	bool first_time = true;
+	bool can_play = false;
+	public bool CanPlay { get => can_play; set => can_play = value; }
 	public bool First { get => first_time; }
 
-    MouseController mouse = new MouseController();
+    //MouseController mouse = new MouseController();
 
     [SerializeField]
     private TextMesh level;
@@ -55,16 +57,23 @@ public class PolybiusManager : MonoBehaviour
     {
         lifes[lifesActive].enabled = false;
         lifesActive--;
-        if(lifesActive <= 0)
+        if(lifesActive < 0)
         {
             lose();
-			lifesActive = 0;
+			reset();
         }
     }
+
+	void reset()
+	{
+		lifesActive = lifes.Length - 1;;
+		for(int i = 0; i <= lifesActive; i++)
+			lifes[i].enabled = true;
+	}
     private void lose()
     {
 		first_time = false;
-        GameManager.Instance.Sanity -= spawn.Difficult;
+        GameManager.Instance.Sanity -= spawn.Difficult + 10000;
         if(sanity != null) sanity.SetActive(true); 
         MapController.Instance.changeMap(old_room);
     }

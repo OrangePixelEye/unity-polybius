@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -6,17 +7,19 @@ using UnityEngine.Networking;
 
 public class Database
 {
+	public event EventHandler FormSent;
+	public event EventHandler ReceivedInfo;
 	private string result = "";
-	bool coroutine_finished = false;
-    public IEnumerator sendData(string name, string time, string ending)
+	public string Result { get=> result; }
+    public IEnumerator sendData(string name, string time, int ending)
     {
         WWWForm form = new WWWForm();
         form.AddField("name", name);
 		form.AddField("time", time);
-		form.AddField("ending", ending);
+		form.AddField("final", ending);
 		
 
-        using (UnityWebRequest www = UnityWebRequest.Post("https://www.my-server.com/myform", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/polybius/inserir.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -26,16 +29,16 @@ public class Database
             }
             else
             {
-                Debug.Log("Form upload complete!");
+                FormSent?.Invoke(this, EventArgs.Empty);
             }
         }
 	}
 
-    public string showDatabase() => result;
+    //public string showDatabase() => result;
 
 	public IEnumerator getText() 
 	{
-        UnityWebRequest www = UnityWebRequest.Get("https://www.my-server.com");
+        UnityWebRequest www = UnityWebRequest.Get("http://localhost/polybius/lista_jogadores.php");
         yield return www.SendWebRequest();
  
         if (www.isHttpError) 
@@ -44,8 +47,10 @@ public class Database
         }
         else 
 		{
+			
             // Show results as text
 			result = (www.downloadHandler.text);
+			ReceivedInfo?.Invoke(this, EventArgs.Empty);
         }
     }
 }

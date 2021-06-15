@@ -28,8 +28,10 @@ public class FinalSceneManager : MonoBehaviour
 	[SerializeField]
 	private Image image_language;
 
+	bool change = true;
+
     // Start is called before the first frame update
-	void tart()
+	void Start()
     {
 		//change picture to corresponding language
 		changeImage();
@@ -39,9 +41,11 @@ public class FinalSceneManager : MonoBehaviour
 
     private void changeImage()
 	{
+		bool gm_end = false;
+		if(GameManager.Instance.Lose == 0) gm_end = true;
 		foreach(Reports report in reports)
 		{
-			if(report.languages.Equals(GameManager.Instance.Language) && report.positive_ending == GameManager.Instance.Lose)
+			if(report.languages.Equals(GameManager.Instance.Language) && report.positive_ending == gm_end)
 			{
 				image_language.sprite = report.image;
 				return;
@@ -66,6 +70,7 @@ public class FinalSceneManager : MonoBehaviour
 	{
 		if(Input.anyKey)
 		{
+			//change = false;
 			panel.SetActive(false);
 			input_panel.SetActive(true);
 			Destroy(this);

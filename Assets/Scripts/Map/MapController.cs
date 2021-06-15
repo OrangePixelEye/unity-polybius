@@ -53,7 +53,7 @@ public class MapController : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.M)) showMap();
+        //if(Input.GetKeyUp(KeyCode.M)) showMap();
     }
 
     private void showMap()

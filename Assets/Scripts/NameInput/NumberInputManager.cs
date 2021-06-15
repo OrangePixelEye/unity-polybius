@@ -43,7 +43,7 @@ public class NumberInputManager : MonoBehaviour
         {
             if(Enumerable.SequenceEqual(codes[i].code, code))
             {
-                spawn.GetComponentInChildren<Spawn>().Difficult = i + 1;
+                spawn.GetComponentInChildren<Spawn>().Difficult = i;
                 input.SetActive(false);
                 //ativar o polybius
                 spawn.SetActive(true);

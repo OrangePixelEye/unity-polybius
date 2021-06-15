@@ -14,13 +14,13 @@ public class Spawn : MonoBehaviour, IMove
     Props_Text p = null;
     bool has_text = false;
 
-    private int difficult = 3;
+    private int difficult = 0;
 
     public int Difficult{get => difficult; set=> difficult = value;}
 
-    void Start()
+    void OnEnable()
     {
-        code_char = code[difficult - 1].ToCharArray();
+        code_char = code[difficult].ToCharArray();
         //Props_Text.Instance.LetterNotDestroyed += letterNotDestroyed;
         //Props_Text.Instance.LetterDestroyed += letterDestroyed;
         StartCoroutine(spawnObjects());
@@ -48,10 +48,11 @@ public class Spawn : MonoBehaviour, IMove
 
     private IEnumerator spawnObjects()
     {
-		if(PolybiusManager.Instance.First) difficult *= 12;
+		float temp_difficult = difficult;
+		if(PolybiusManager.Instance.First) temp_difficult *= 12;
         while(true)
         {
-            yield return new WaitForSecondsRealtime(0.3f * difficult/2);
+            yield return new WaitForSecondsRealtime(0.9f - (temp_difficult * 0.3f));
             spawn();
         }
     }

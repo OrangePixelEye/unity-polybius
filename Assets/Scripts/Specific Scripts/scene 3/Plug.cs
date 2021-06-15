@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Plug : Interactable
 {
-	[SerializeField]
-    private GameObject new_room;
     private bool follow_mouse = false;
     new void OnMouseUp()
     {
@@ -26,8 +24,8 @@ public class Plug : Interactable
     {
         if(collision.collider.gameObject.name == "socket" && !follow_mouse)
         {
-            MapController.Instance.changeMap(new_room);
-
+			PolybiusManager.Instance.CanPlay = true;
+            //MapController.Instance.changeMap(new_room);
         }
     }
 }

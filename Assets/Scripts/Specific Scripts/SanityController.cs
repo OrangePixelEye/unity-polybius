@@ -21,6 +21,6 @@ public class SanityController : MonoBehaviour
         }
     }
 
-    public void setSanity(int sanity) => sanity_text.text = sanity_text.ToString();
+    public void setSanity(int sanity) => sanity_text.text = GameManager.Instance.Sanity.ToString();
     
 }

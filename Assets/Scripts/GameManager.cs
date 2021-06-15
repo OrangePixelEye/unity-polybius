@@ -30,20 +30,24 @@ public class GameManager : MonoBehaviour
         get => sanity; 
         set
         {
-            if(value <= 0) lose();
             sanity = value;
-            SanityController.Instance.setSanity(sanity);    
+            SanityController.Instance.setSanity(sanity);   
+			if(sanity <= 0) lose(); 
         } 
     }
 
-	public bool Lose 
+	public int Lose 
 	{ 
-		get => positive_ending; 
+		get 
+		{
+			if(positive_ending) return 0;
+			return 1;
+		} 
 	}
 
 	private bool positive_ending = false;
     private Lang game_language;
-    private Database database;
+    public Database database;
     private string current_language = "Portuguese";
 
 	public string Language 
@@ -55,6 +59,7 @@ public class GameManager : MonoBehaviour
 			game_language = new Lang(Path.Combine(Application.dataPath, "Scripts/Languages/lang.xml"), current_language);
 		}
 	}
+
 
     public void ChangeScene(int scene_build_index) => SceneManager.LoadScene(scene_build_index);
     
@@ -69,13 +74,9 @@ public class GameManager : MonoBehaviour
         //if(!ending)timer();
     }
 
-	public void sendToDatabase(string name, string time, string ending) => StartCoroutine(database.sendData(name, time, ending));
+	public void sendToDatabase(string name, string time, int ending) => StartCoroutine(database.sendData(name, time, ending));
 
-	public string getDatabaseData()
-	{
-		StartCoroutine(database.getText());
-		return database.showDatabase();
-	}
+	public string getDatabaseData() => database.Result;
 
     public string getText(string name) => game_language.getString(name); 
 
@@ -83,12 +84,14 @@ public class GameManager : MonoBehaviour
 	{
 		positive_ending = false;	
 		end = true;
+		ChangeScene(4);
 	}
     
 	private void win()
 	{
 		positive_ending = true;
 		end = true;
+		ChangeScene(4);
 	} 
 
     private void timer() => time += Time.deltaTime;

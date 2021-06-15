@@ -1,4 +1,4 @@
-﻿
+﻿/*
 using System.Runtime.InteropServices;
 using UnityEngine;
 
@@ -40,4 +40,4 @@ public class MouseController
         SetCursorPos(cursorPos.x + factor, cursorPos.y + factor);
     }
 }
-
+*/
