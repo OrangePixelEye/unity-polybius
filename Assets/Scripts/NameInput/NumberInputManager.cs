@@ -15,10 +15,10 @@ public class NumberInputManager : MonoBehaviour
     private GameObject input;
 
     [SerializeField]
-    private GameObject game_ui;
+    public GameObject game_ui;
 
     [SerializeField]
-    private GameObject spawn;
+    public GameObject spawn;
 
 	[System.Serializable]
 	struct Codes{

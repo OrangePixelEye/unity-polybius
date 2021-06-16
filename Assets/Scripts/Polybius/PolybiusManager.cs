@@ -21,6 +21,9 @@ public class PolybiusManager : MonoBehaviour
     [SerializeField]
     private GameObject old_room;
 
+	[SerializeField]
+	private GameObject input_number;
+
 	bool first_time = true;
 	bool can_play = false;
 	public bool CanPlay { get => can_play; set => can_play = value; }
@@ -66,14 +69,18 @@ public class PolybiusManager : MonoBehaviour
 
 	void reset()
 	{
-		lifesActive = lifes.Length - 1;;
+		lifesActive = lifes.Length - 1;
+		input_number.SetActive(true);
+		NumberInputManager.Instance.spawn.SetActive(false);
+		NumberInputManager.Instance.game_ui.SetActive(false);
+
 		for(int i = 0; i <= lifesActive; i++)
 			lifes[i].enabled = true;
 	}
     private void lose()
     {
 		first_time = false;
-        GameManager.Instance.Sanity -= spawn.Difficult + 10000;
+        GameManager.Instance.Sanity -= spawn.Difficult;
         if(sanity != null) sanity.SetActive(true); 
         MapController.Instance.changeMap(old_room);
     }

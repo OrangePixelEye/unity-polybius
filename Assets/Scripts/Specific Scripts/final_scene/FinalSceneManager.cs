@@ -59,7 +59,7 @@ public class FinalSceneManager : MonoBehaviour
 	{
 		TimeSpan t = TimeSpan.FromSeconds(time);
 
-		string answer = string.Format("{0:D2}h:{1:D2}m:{2:D2}s", 
+		string answer = string.Format("{0:D2}:{1:D2}:{2:D2}", 
 						t.Hours, 
 						t.Minutes, 
 						t.Seconds);

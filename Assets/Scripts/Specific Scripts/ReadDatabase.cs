@@ -15,8 +15,7 @@ public class ReadDatabase : MonoBehaviour
     public void OnEnable()
     {
 		//read database
-		text.text = (parse_json(GameManager.Instance.getDatabaseData()) + 
-					"\n Your time : " + GameManager.Instance.Timer.ToString());
+		text.text = (parse_json(GameManager.Instance.getDatabaseData()));
 		//put you in the end
     }
 
