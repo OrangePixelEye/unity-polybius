@@ -1,0 +1,5 @@
+copiar database.sql pro xampp -> shell
+criar uma pasta com o nome de polybius em C:\xampp\htdocs
+colocar os .php na pasta 
+
+quando rodar -> preload
